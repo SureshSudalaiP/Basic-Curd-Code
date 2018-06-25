@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Practice CRUD</title>
+		<script src="js/angular.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/Client.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	</head>
+	<body ng-app="myapp" ng-controller="MyController">
+		<div class="container">
+			<div class="row text-center" style="background:gray;color:white"><h2>Practice CRUD</h2></div>
+		<br>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+						<form name="adddetails">
+							<div class="form-group">
+								<label for="name">Name</label>
+								<input type="text" class="form-control" id="name" ng-model="details[0].name" placeholder="Name" required />
+							</div>
+							
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" class="form-control" id="email" ng-model="details[0].email" placeholder="Email" required />
+							</div>
+							
+							<div class="form-group">
+								<label for="mobile">Mobile</label>
+								<input type="number" class="form-control" id="mobile" ng-model="details[0].mobile" placeholder="Mobile" required />
+							</div>
+							
+							<div class="form-group">
+								<button class="btn btn-primary" ng-disabled="adddetails.$invalid" id="svbtn" ng-click="SaveDetails()">Save</button>
+								<button class="btn btn-default" onclick="document.getElementById('svbtn').innerHTML = 'Save'" ng-click="details = null">Cancel</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="row">
+					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 pull-right"><input class="form-control" placeholder="Search" ng-model="search"/></div></div>
+					<div class="row">
+					<br>
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped">
+								<thead>
+									<th>#</th>
+									<th>Name</th>
+									<th>Mobile</th>
+									<th>Email</th>
+									<th>Action</th>
+								</thead>
+								<tbody ng-init="GetDetailsList()">
+									<tr ng-repeat="data in detailsList | filter:search">
+										<td>{{$index +1}}</td>
+										<td>{{data.name}}</td>
+										<td>{{data.mobile}}</td>
+										<td>{{data.email}}</td>
+										<td><button class="btn btn-warning" ng-click="GetDetails($index)">Edit</button> | <button class="btn btn-danger" ng-click="deleteDetails($index)">Delete</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

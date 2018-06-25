@@ -1,0 +1,17 @@
+{
+  "name": "mayur_mhatre",
+  "version": "1.0.0",
+  "description": "practice application",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log(\"hello world\")"
+  },
+  "author": "mayur mhatre",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "morgan": "^1.9.0"
+  }
+}
