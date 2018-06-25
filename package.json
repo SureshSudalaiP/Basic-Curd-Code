@@ -1,12 +1,12 @@
 {
-  "name": "mayur_mhatre",
+  "name": "SureshSudalaiP",
   "version": "1.0.0",
   "description": "practice application",
   "main": "index.js",
   "scripts": {
     "test": "console.log(\"hello world\")"
   },
-  "author": "mayur mhatre",
+  "author": "SureshSudalaiP",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
